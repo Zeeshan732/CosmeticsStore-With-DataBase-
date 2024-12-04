@@ -81,7 +81,7 @@
           <Font name="Times New Roman" size="30" style="1"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
-        <Property name="text" type="java.lang.String" value="Cosmetic Store"/>
+        <Property name="text" type="java.lang.String" value="Restaurant Management System"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel1">
