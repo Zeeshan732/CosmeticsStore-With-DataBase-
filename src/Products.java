@@ -60,7 +60,7 @@ public class Products extends javax.swing.JFrame {
             return;
         }
 
-        // Parse and validate numeric fields
+        
         int id = Integer.parseInt(txtid.getText());
         double price = Double.parseDouble(txtprice.getText());
 
@@ -206,6 +206,8 @@ public class Products extends javax.swing.JFrame {
 }
 
 
+
+
         
         
     /**
@@ -326,7 +328,7 @@ public class Products extends javax.swing.JFrame {
 
         jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 30)); // NOI18N
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setText("Cosmetic Record");
+        jLabel5.setText("Restaurnant Record");
 
         btnsearch.setBackground(new java.awt.Color(204, 204, 255));
         btnsearch.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
@@ -428,52 +430,7 @@ public class Products extends javax.swing.JFrame {
             public void actionPerformed(ActionEvent evt) {
                 addProduct();
             }
-        });
-            
-        
-//    String productName = txtname.getText().trim();
-//    String productId = txtid.getText().trim();
-//    String priceText = txtprice.getText().trim();
-//    String status = txtstatus.getText().trim();
-//
-//    
-//    if (productName.isEmpty() || !productName.matches("[a-zA-Z\\s]+")) {
-//        JOptionPane.showMessageDialog(this, "Please enter a valid product name.");
-//        return;
-//    }
-//
-//    if (productId.isEmpty() || !productId.matches("[a-zA-Z0-9]+")) {
-//        JOptionPane.showMessageDialog(this, "Please enter a valid product ID.");
-//        return;
-//    }
-//    
-//    try {
-//        double price = Double.parseDouble(priceText);
-//        if (price <= 0) {
-//            JOptionPane.showMessageDialog(this, "Price must be a positive value.");
-//            return;
-//        }
-//    } catch (NumberFormatException e) {
-//        JOptionPane.showMessageDialog(this, "Please enter a valid info.");
-//        return;
-//    }
-//    
-//    if (status.isEmpty()) {
-//        JOptionPane.showMessageDialog(this, "Status cannot be empty.");
-//        return;
-//    }
-//
-//    
-//    DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
-//    model.addRow(new Object[]{productName, productId, priceText, status});
-//
-//    
-//    txtname.setText("");
-//    txtid.setText("");
-//    txtprice.setText("");
-//    txtstatus.setText(""); 
-//    saveToFile();  
-//  
+        }); 
     }//GEN-LAST:event_btnAddActionPerformed
 
     
@@ -488,19 +445,7 @@ public class Products extends javax.swing.JFrame {
                 resetFields();
             }
         });
-//        DefaultTableModel tblModel = (DefaultTableModel)jTable1.getModel();
-//        
-//        if(jTable1.getSelectedRowCount()==1){
-//            // When Single row selected
-//             tblModel.removeRow(jTable1.getSelectedRow());
-//        }else{
-//            if(jTable1.getRowCount()==0){
-//                //show message when table is empty
-//               JOptionPane.showMessageDialog(this, "Table is Empty");
-//        }else{
-//             JOptionPane.showMessageDialog(this,"Please Select a Single Row");
-//            }
-//            }
+
     }//GEN-LAST:event_btnDeleteActionPerformed
 
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
@@ -518,35 +463,14 @@ public class Products extends javax.swing.JFrame {
     }//GEN-LAST:event_jTable1MouseClicked
 
     private void btnupdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnupdateActionPerformed
-////        DefaultTableModel tblModel = (DefaultTableModel)jTable1.getModel();
-////        if(jTable1.getSelectedRowCount()==1){
-////            // if single row selected then update
-////            String name = txtname.getText();
-////            String id = txtid.getText();
-////            String price = txtprice.getText();
-////            String status = txtstatus.getText();
-////            // Set updated value on table row
-////            tblModel.setValueAt(name, jTable1.getSelectedRow(),0);
-////            tblModel.setValueAt(id, jTable1.getSelectedRow(),1);
-////            tblModel.setValueAt(price, jTable1.getSelectedRow(),2);
-////            tblModel.setValueAt(status, jTable1.getSelectedRow(),3);
-////            // then update message display 
-////            JOptionPane.showMessageDialog(this, "Your data is update now");
-////        }else{
-////            if(jTable1.getRowCount()==0){
-////                //show message when table is empty
-////               JOptionPane.showMessageDialog(this, "Table is Empty");
-////            }else{
-////                //select row for update
-////                JOptionPane.showMessageDialog(this,"Please Select a Single Row for update");
-////            }
-////        }
             btnupdate.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
                 updateProduct();
-                resetFields();
+                
             }
+            
         });
+            resetFields();
     }//GEN-LAST:event_btnupdateActionPerformed
 
     private void btnresetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnresetActionPerformed
@@ -563,33 +487,9 @@ public class Products extends javax.swing.JFrame {
     }//GEN-LAST:event_txtpriceActionPerformed
 
     private void btnsearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsearchActionPerformed
-//         String searchName = txtname.getText();
-//         String searchID = txtid.getText();
-//                
-//                // Iterate over the rows to find a match
-//                for (int row = 0; row < jTable1.getRowCount(); row++) {
-//                    String productID = jTable1.getValueAt(row, 1).toString();
-//                    String productName = jTable1.getValueAt(row, 0).toString();
-//                    if (productID.equals(searchID)|| productName.equals(searchName)) {
-//                       
-//                        jTable1.setRowSelectionInterval(row, row);
-//                        Store store = new Store();
-//                        store.displaySelectedRowData();
-//                       
-//                        return; // Exit the method after finding a match
-//                    }
-//                }
-            btnsearch.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent evt) {
-                searchProduct();
-                resetFields();
-            }
-        });
-                
-                
-                JOptionPane.showMessageDialog(Products.this, "No product found : ");
-        
-
+            
+                searchProduct(); 
+                //JOptionPane.showMessageDialog(Products.this, "No product found : ");
     }//GEN-LAST:event_btnsearchActionPerformed
         
     /**
