@@ -10,9 +10,9 @@ class Store {
     private List<Product> inventory;
 
     // Database credentials
-    private static final String DB_URL = "jdbc:oracle:thin:@localhost:1521:xe"; // Update with your DB URL
-    private static final String USER = "system"; // Update with your DB username
-    private static final String PASSWORD = "hr"; // Update with your DB password
+    private static final String DB_URL = "jdbc:oracle:thin:@localhost:1521:xe"; 
+    private static final String USER = "system"; 
+    private static final String PASSWORD = "hr"; 
 
     public Store(String name, String id, String price, String status) {
         this.name = name;
